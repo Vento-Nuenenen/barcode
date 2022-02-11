@@ -1,4 +1,6 @@
-<?php namespace Vento\Barcode\Facades;
+<?php
+
+namespace Vento\Barcode\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
