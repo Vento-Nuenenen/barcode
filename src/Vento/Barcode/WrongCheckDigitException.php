@@ -14,7 +14,6 @@ class WrongCheckDigitException extends \LogicException {
 	 * @param Exception|NULL $previous
 	 */
 	public function __construct($actual = NULL, $expected = NULL, $code = 0, \Exception $previous = NULL) {
-
 		$message = NULL;
 		if ($actual && $expected) {
 			$message = 'Expected ' . $expected . ' get ' . $actual;
@@ -22,6 +21,4 @@ class WrongCheckDigitException extends \LogicException {
 
 		parent::__construct($message, $code, $previous);
 	}
-
-
 }
