@@ -57,17 +57,8 @@ Once this operation completes, the final step is to add the service provider. Op
 ```php
 'providers' => [
     // ...
-    vento\Barcode\BarcodeServiceProvider::class,
+    Vento\Barcode\BarcodeServiceProvider::class,
 ]
-```
-
-For version 4.* add these lines on `app/config/app.php` file-
-
-```php
-'providers' => array(
-    // ...
-    'Vento\Barcode\BarcodeServiceProvider',
-)
 ```
 
 If you want to change Bar-code's settings (Store Path etc.), you need to publish its config file(s). For that you need to run in the terminal-
@@ -75,9 +66,6 @@ If you want to change Bar-code's settings (Store Path etc.), you need to publish
 ```shell script
 # Laravel 5.x
 php artisan vendor:publish
-
-# Laravel 4.x
-php artisan config:publish milon/barcode
 ```
 
 Make sure you have write permission to the storage path. By default it sets to `/storage` folder.
@@ -87,19 +75,9 @@ Now add the alias.
 ```php
 'aliases' => [
     // ...
-    'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
-    'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
+    'DNS1D' => Vento\Barcode\Facades\DNS1DFacade::class,
+    'DNS2D' => Vento\Barcode\Facades\DNS2DFacade::class,
 ]
-```
-
-For version 4.2 alias will be like this-
-
-```php
-'aliases' => array(
-    // ...
-    'DNS1D' => 'Milon\Barcode\Facades\DNS1DFacade',
-    'DNS2D' => 'Milon\Barcode\Facades\DNS2DFacade',
-)
 ```
 
 Bar-code generator like Qr Code, PDF417, C39, C39+, C39E, C39E+, C93, S25, S25+, I25, I25+, C128, C128A, C128B, C128C, 2-Digits UPC-Based Extention, 5-Digits UPC-Based Extention, EAN 8, EAN 13, UPC-A, UPC-E, MSI (Variation of Plessey code)
@@ -213,11 +191,12 @@ echo $d->getBarcodeHTML('9780691147727', 'EAN13');
 
 This package is published under `GNU LGPLv3` license and copyright to [Nuruzzaman Milon](http://milon.im). Original Barcode generation classes were written by Nicola Asuni. The license agreement is on project's root.
 
-License: GNU LGPLv3<br>
-Package Author: [Nuruzzaman Milon](http://milon.im)<br>
-Original Barcode Class Author: [Nicola Asuni](http://www.tcpdf.org)<br>
-Package Copyright: Nuruzzaman Milon<br>
-Barcode Generation Class Copyright:<br>
-Nicola Asuni<br>
-Tecnick.com LTD<br>
-www.tecnick.com
+License: GNU LGPLv3 <br />
+Package Author: Vento <br />
+Original Package Author: [Nuruzzaman Milon](http://milon.im) <br />
+Original Barcode Class Author: [Nicola Asuni](http://www.tcpdf.org) <br />
+Package Copyright: Nuruzzaman Milon <br />
+Barcode Generation Class Copyright: <br />
+Nicola Asuni <br />
+Tecnick.com LTD <br />
+www.tecnick.com <br />
