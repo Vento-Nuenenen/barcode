@@ -1,18 +1,16 @@
-[![Packagist Downloads](https://img.shields.io/packagist/dt/milon/barcode.svg)](https://packagist.org/packages/milon/barcode) [![Stable version](https://img.shields.io/packagist/v/milon/barcode.svg)](https://packagist.org/packages/milon/barcode) [![License](https://img.shields.io/packagist/l/milon/barcode.svg)](https://packagist.org/packages/milon/barcode)
-
-This is a barcode generation package inspired by <https://github.com/tecnickcom/TCPDF>. Actually, I use that package's underline classes for generating barcodes. This package is just a wrapper of that package and adds compatibility with Laravel 5.
+This is a barcode generation package inspired by <https://github.com/tecnickcom/TCPDF>. Actually, I use that package's underline classes for generating barcodes. This package is just a wrapper of that package and adds compatibility with Laravel 6 - 9.
 
 I used the following classes of that package.
 
-- src/Milon/Barcode/Datamatrix.php (include/barcodes/datamatrix.php)
-- src/Milon/Barcode/DNS1D.php (tcpdf_barcodes_1d.php)
-- src/Milon/Barcode/DNS2D.php (tcpdf_barcodes_2d.php)
-- src/Milon/Barcode/PDF417.php (include/barcodes/pdf417.php)
-- src/Milon/Barcode/QRcode.php (include/barcodes/qrcode.php)
+- src/vento/Barcode/Datamatrix.php (include/barcodes/datamatrix.php)
+- src/vento/Barcode/DNS1D.php (tcpdf_barcodes_1d.php)
+- src/vento/Barcode/DNS2D.php (tcpdf_barcodes_2d.php)
+- src/vento/Barcode/PDF417.php (include/barcodes/pdf417.php)
+- src/vento/Barcode/QRcode.php (include/barcodes/qrcode.php)
 
 [Read More on TCPDF website](http://www.tcpdf.org)
 
-# This package is compatible with Laravel `4.*` , `5.*`, `6.*`, `7.*` and `8.*`
+# This package is compatible with Laravel `6.*`, `7.*`, `8.*`, `9.*`
 
 This package relies on [php-gd](http://php.net/manual/en/book.image.php) extension. So, make sure it is installed on your machine.
 
@@ -21,46 +19,30 @@ This package relies on [php-gd](http://php.net/manual/en/book.image.php) extensi
 Begin by installing this package through Composer. Just run following command to terminal-
 
 ```shell script
-composer require milon/barcode
+composer require vento/barcode
 ```
 
 You can also edit your project's `composer.json` file to require `milon/barcode`.
 
 ```json
 "require": {
-    "milon/barcode": "^8.0"
+    "vento/barcode": "^8.0"
 }
 ```
 
-For Laravel 7.* use this-
+For Laravel 7.* use this:
 
 ```json
 "require": {
-    "milon/barcode": "^7.0"
+    "vento/barcode": "^7.0"
 }
 ```
 
-For Laravel 6.* use this-
+For Laravel 6.* use this:
 
 ```json
 "require": {
-    "milon/barcode": "^6.0"
-}
-```
-
-For Laravel 5.0 and 5.1 use this-
-
-```json
-"require": {
-    "milon/barcode": "^5.1"
-}
-```
-
-For Laravel 4.0, 4.1 and 4.2 use this-
-
-```json
-"require": {
-    "milon/barcode": "^4.2"
+    "vento/barcode": "^6.0"
 }
 ```
 
@@ -75,7 +57,7 @@ Once this operation completes, the final step is to add the service provider. Op
 ```php
 'providers' => [
     // ...
-    Milon\Barcode\BarcodeServiceProvider::class,
+    vento\Barcode\BarcodeServiceProvider::class,
 ]
 ```
 
@@ -84,7 +66,7 @@ For version 4.* add these lines on `app/config/app.php` file-
 ```php
 'providers' => array(
     // ...
-    'Milon\Barcode\BarcodeServiceProvider',
+    'Vento\Barcode\BarcodeServiceProvider',
 )
 ```
 
@@ -220,7 +202,7 @@ You can use this library without using Laravel.
 Example:
 
 ```php
-use \Milon\Barcode\DNS1D;
+use \Vento\Barcode\DNS1D;
 
 $d = new DNS1D();
 $d->setStorPath(__DIR__.'/cache/');
@@ -230,8 +212,6 @@ echo $d->getBarcodeHTML('9780691147727', 'EAN13');
 ## License
 
 This package is published under `GNU LGPLv3` license and copyright to [Nuruzzaman Milon](http://milon.im). Original Barcode generation classes were written by Nicola Asuni. The license agreement is on project's root.
-
-### [Buy me a coffee ☕](https://paypal.me/tomilon?locale.x=en_US)
 
 License: GNU LGPLv3<br>
 Package Author: [Nuruzzaman Milon](http://milon.im)<br>
