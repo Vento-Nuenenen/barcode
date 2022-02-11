@@ -11,7 +11,6 @@
   |
  */
 
-
 Route::get('/barcodes', function() {
        return "barcodes";
 });
