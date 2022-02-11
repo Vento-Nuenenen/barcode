@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Milon\\Barcode": "src/"
+            "Vento\\Barcode": "src/"
         }
     },
     "minimum-stability": "stable",

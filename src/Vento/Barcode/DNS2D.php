@@ -1,6 +1,6 @@
 <?php
 
-namespace Milon\Barcode;
+namespace Vento\Barcode;
 
 //============================================================+
 // File name   : tcpdf_barcodes_2d.php
